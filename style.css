@@ -51,7 +51,7 @@ strong, b {
 	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: center;
-	background-color: var(--darkslate);
+	background-color: var(--charcoal);
 }
 
 .card {
@@ -168,7 +168,7 @@ strong, b {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: var(--darkslate);
+	background-color: var(--charcoal);
 }
 
 .modal-wrapper {
