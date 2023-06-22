@@ -1,0 +1,262 @@
+* {
+	box-sizing: border-box;
+	font: inherit;
+}
+
+:root {
+	--border: hsl(4, 34%, 61%);
+	--tomato: hsl(4, 100%, 67%);
+	--coral: hsl(25, 98%, 64%);
+	--error: hsl(2, 100%, 95%);
+	--darkslate: hsl(234, 29%, 20%);
+	--charcoal: hsl(235, 18%, 26%);
+	--gray: hsl(231, 7%, 60%);
+	--white: hsl(0, 0%, 100%);
+}
+
+body {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.5;
+	color: var(--darkslate);
+	min-height: 100vh;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 0.8125rem;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+p {
+	margin: 0 0 1.5rem;
+}
+
+strong, b {
+	font-weight: bold;
+}
+
+.site-main {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	background-color: var(--darkslate);
+}
+
+.card {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	width: 100%;
+	max-width: 23.4375rem;
+	margin-inline: auto;
+	background-color: var(--white);
+}
+
+.card-image {
+	flex: 0 0 100%;
+	padding-bottom: 75.73334%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('./assets/images/illustration-sign-up-mobile.svg');
+}
+
+.card-body {
+	flex: 1 0 0;
+	padding: 1.875rem 1.5rem 2.5rem;
+}
+
+.checklist {
+	padding: 0;
+	list-style: none;
+	margin: 0 0 2.5625rem;
+}
+
+.checklist-item {
+	position: relative;
+	padding-left: 2.25rem;
+	margin-bottom: 0.625rem;
+}
+
+.checklist-item::before {
+	position: absolute;
+	top: 0.125rem;
+	left: 0;
+	content: url("./assets/images/icon-list.svg");
+}
+
+.form-group {
+	position: relative;
+	margin-bottom: 1.5rem;
+}
+
+.form-label {
+	display: block;
+	font-weight: bold;
+	font-size: 0.75rem;
+	margin-bottom: 0.5rem;
+}
+
+.form-field {
+	display: block;
+	width: 100%;
+	appearance: none;
+	border-radius: 0.5rem;
+	padding: 0.9375rem 1.5625rem;
+	border: 0.0625rem solid var(--gray);
+}
+
+.form-field:focus {
+	outline: none;
+}
+
+.error {
+	border-color: var(--border);
+	background-color: var(--error);
+}
+
+.error-text {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 12px;
+	font-weight: bold;
+	color: var(--tomato);
+
+}
+
+.btn {
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	text-align: center;
+	appearance: none;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	padding: 0.9375rem 1.5625rem;
+	border: 0.0625rem solid var(--gray);
+}
+
+.btn-submit, .btn-close {
+	color: var(--white);
+	border-color: var(--darkslate);
+	background-image: linear-gradient(to right, var(--darkslate), var(--darkslate));
+	transition: all 0.5s ease-in-out;
+}
+
+.btn-submit:hover, .btn-close:hover,
+.btn-submit:focus, .btn-close:focus {
+	border-color: transparent;
+	background-image: linear-gradient(to right, var(--tomato), var(--coral));
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--darkslate);
+}
+
+.modal-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-inline: 1.5rem;
+	background-color: var(--white);
+}
+
+.modal-header {
+	padding: 9.375rem 0 1.5rem;
+}
+
+.modal-icon {
+	margin-bottom: 2rem;
+}
+
+.modal-title {
+	font-size: 2.5rem;
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+.modal-footer {
+	position: absolute;
+	left: 1.5rem;
+	right: 1.5rem;
+	bottom: 4.375rem;
+}
+
+@media screen and (min-width: 992px) {
+	h1 {
+		font-size: 3.5rem;
+	}
+
+	.card {
+		padding: 1.5rem 1.625rem 1.5rem 0;
+		flex-direction: row-reverse;
+		max-width: 58.125rem;
+		border-radius: 2.5rem;
+	}
+
+	.card-image {
+		flex: 0 0 25rem;
+		padding-bottom: 0;
+		border-radius: 1rem;
+		background-image: url('./assets/images/illustration-sign-up-desktop.svg');
+	}
+
+	.card-body {
+		padding: 3.625rem 4rem 4.625rem;
+	}
+
+	.card-title {
+		margin-bottom: 0.625rem;
+	}
+
+	.modal-wrapper {
+		top: 50%;
+		left: 50%;
+		height: auto;
+		max-width: 31.5rem;
+		border-radius: 2.5rem;
+		padding: 3.0625rem 4rem 4rem;
+		transform: translate(-50%, -50%);
+	}
+
+	.modal-header {
+		padding: 0 0 1.5625rem;
+	}
+
+	.modal-body {
+		padding-bottom: 2.5rem;
+	}
+
+	.modal-title {
+		font-size: 3.5rem;
+	}
+
+	.modal-desc {
+		margin-bottom: 0;
+	}
+
+	.modal-footer {
+		position: relative;
+		left: 0;
+		bottom: 0;
+		bottom: 0;
+	}
+}
